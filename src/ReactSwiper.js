@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Swiper from 'swiper';
 
 function pagination(argPagination) {
@@ -198,10 +199,10 @@ class ReactSwiper extends React.Component {
 
 if (process.env.NODE_ENV !== 'production') {
   ReactSwiper.propTypes = {
-    children: React.PropTypes.any.isRequired,
-    swipeOptions: React.PropTypes.object,
-    style: React.PropTypes.object,
-    className: React.PropTypes.string,
+    children: PropTypes.any.isRequired,
+    swipeOptions: PropTypes.object,
+    style: PropTypes.object,
+    className: PropTypes.string,
   };
 }
 
