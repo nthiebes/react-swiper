@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _swiper = require('swiper');
 
 var _swiper2 = _interopRequireDefault(_swiper);
@@ -54,7 +58,7 @@ var ReactSwiper = function (_React$Component) {
   function ReactSwiper() {
     _classCallCheck(this, ReactSwiper);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(ReactSwiper).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ReactSwiper.__proto__ || Object.getPrototypeOf(ReactSwiper)).apply(this, arguments));
   }
 
   _createClass(ReactSwiper, [{
@@ -78,7 +82,7 @@ var ReactSwiper = function (_React$Component) {
   }, {
     key: 'getWrapperTranslate',
     value: function getWrapperTranslate() {
-      var axis = arguments.length <= 0 || arguments[0] === undefined ? 'x' : arguments[0];
+      var axis = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'x';
 
       return this.swipe.getWrapperTranslate(axis);
     }
@@ -110,8 +114,8 @@ var ReactSwiper = function (_React$Component) {
   }, {
     key: 'slideTo',
     value: function slideTo(index) {
-      var speed = arguments.length <= 1 || arguments[1] === undefined ? 1000 : arguments[1];
-      var runCallbacks = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
+      var speed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1000;
+      var runCallbacks = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
       this.swipe.slideTo(index, speed, runCallbacks);
     }
@@ -128,24 +132,24 @@ var ReactSwiper = function (_React$Component) {
   }, {
     key: 'destroy',
     value: function destroy() {
-      var deleteInstance = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
-      var cleanupStyles = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+      var deleteInstance = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+      var cleanupStyles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
       this.swipe.destroy(deleteInstance, cleanupStyles);
     }
   }, {
     key: 'prev',
     value: function prev() {
-      var runCallbacks = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
-      var speed = arguments.length <= 1 || arguments[1] === undefined ? 1000 : arguments[1];
+      var runCallbacks = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var speed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1000;
 
       this.swipe.slidePrev(runCallbacks, speed);
     }
   }, {
     key: 'next',
     value: function next() {
-      var runCallbacks = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
-      var speed = arguments.length <= 1 || arguments[1] === undefined ? 1000 : arguments[1];
+      var runCallbacks = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var speed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1000;
 
       this.swipe.slideNext(runCallbacks, speed);
     }
@@ -187,7 +191,7 @@ var ReactSwiper = function (_React$Component) {
   }, {
     key: 'update',
     value: function update() {
-      var updateTranslate = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+      var updateTranslate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
       this.swipe.update(updateTranslate);
     }
@@ -314,11 +318,11 @@ var ReactSwiper = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var children = _props.children;
-      var swipeOptions = _props.swipeOptions;
-      var style = _props.style;
-      var className = _props.className;
+      var _props = this.props,
+          children = _props.children,
+          swipeOptions = _props.swipeOptions,
+          style = _props.style,
+          className = _props.className;
 
       var containerStyle = style || {};
       var containerClassName = className ? className + ' swiper-container' : 'swiper-container';
@@ -346,10 +350,10 @@ var ReactSwiper = function (_React$Component) {
 
 if (process.env.NODE_ENV !== 'production') {
   ReactSwiper.propTypes = {
-    children: _react2.default.PropTypes.any.isRequired,
-    swipeOptions: _react2.default.PropTypes.object,
-    style: _react2.default.PropTypes.object,
-    className: _react2.default.PropTypes.string
+    children: _propTypes2.default.any.isRequired,
+    swipeOptions: _propTypes2.default.object,
+    style: _propTypes2.default.object,
+    className: _propTypes2.default.string
   };
 }
 
